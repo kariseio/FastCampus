@@ -72,14 +72,21 @@ void bfs(int start) {
     }
 }
 
-
-
 int main(void) {
-    scanf(%d %d, &n, &m)
-    
-    
+    scanf("%d %d", &n, &m);
+    a = (Node**)malloc(sizeof(Node*) * MAX_SIZE);
+    for (int i = 1; i <= n; i++) {
+        a[i] = (Node*)malloc(sizeof(Node));
+        a[i]->next = NULL;
+    }
+    for (int i = 0; i < m; i++) {
+        int x, y;
+        scanf("%d %d", &x, &y);
+        addFront(a[x], y);
+        addFront(a[y], x);
+    }
+    bfs(1);
     
     system("pause");
     return 0;
 }
-
