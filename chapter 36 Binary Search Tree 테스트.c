@@ -32,7 +32,6 @@ void push(int index) {
             printf("이미 존재하는 노드입니다.\n");
             return;
         }
-        
     }
     if(prenode->index < index) {
         node = (Node*)malloc(sizeof(Node));
@@ -63,6 +62,18 @@ void BinarySearch(int index) {
     }
 }
 
+void bs(Node *node, int index) {
+    if(node->left != NULL)
+        bs(node->left, index);
+    if(node->right != NULL)
+        bs(node->right, index);
+    if(node->index == index) {
+        printf("%d값은 존재합니다.\n", index);
+    } else {
+        printf("%d값은 존재하지 않습니다.\n", index);
+    }
+}
+
 int main(void) {
     
     printf("%d push.\n", 3);
@@ -71,8 +82,10 @@ int main(void) {
     push(5);
     printf("%d push.\n", 7);
     push(7);
-    BinarySearch(5);
-    BinarySearch(4);
+    // BinarySearch(5);
+    // BinarySearch(4);
+    bs(head, 5);
+    bs(head, 4);
     
     system("pause");
     return 0;
