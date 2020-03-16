@@ -74,10 +74,9 @@ int main(void) {
     root = insertNode(root, 23);
     root = insertNode(root, 37);
     root = insertNode(root, 50);
+	root = deleteNode(root, 30);
     preorder(root);
-    
-    
-    
+        
     system("pause");
     return 0;
 }
